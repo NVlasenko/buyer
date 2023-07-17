@@ -1,0 +1,95 @@
+.header {
+  background-image: url(../images/photos/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+
+  @include onTablet {
+    background-image: url(../images/photos/bg.jpg);
+    background-position: center;
+  }
+  @include onDesktop {
+   background-image: url(../images/photos/bg.jpg);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 24px;
+    @include onTablet {
+      padding-top: 36px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    height: 38px;
+    margin: 0;
+    padding-bottom: 0;
+
+    @include onTablet {
+      height: 56px;
+    }
+  }
+
+  &__active {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__call {
+    text-decoration: none;
+
+    @include onDesktop {
+      &::before {
+        content: "+8888888888";
+        display: block;
+        width: max-content;
+        position: relative;
+        top: 53%;
+        transform: translate(-100%, -50%);
+        color: black;
+        padding-right: 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__title {
+    font-family: 'Chela One', cursive;
+    letter-spacing: 2px;
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: right;
+    padding-top: 400px;
+    padding-bottom: 88px;
+    color: #fff;
+    @include onTablet {
+      font-size: 64px;
+      padding-bottom: 130px;
+      padding-top: 430px;
+      color: black;
+    }
+    @include onDesktop {
+      padding-top: 440px;
+      font-size: 95px;
+      padding-bottom: 200px;
+    }
+  }
+}
