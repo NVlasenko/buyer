@@ -68,23 +68,28 @@
   width: 24px;
   height: 24px;
   margin-right: 20px;
+  box-shadow: 1px 1px 2px, 0 0 1em #aaaaf5, 0 0 .2em #aaaaf5;
 }
 
 @media (width >= 744px) {
   .icon--phone {
     width: 40px;
     height: 40px;
+    margin-right: 40px;
   }
 }
 
 .icon--menu {
   background-image: url("close.c13a083b.png");
+  margin-right: 20px;
+  box-shadow: 1px 1px 2px, 0 0 1em #aaaaf5, 0 0 .2em #aaaaf5;
 }
 
 @media (width >= 744px) {
   .icon--menu {
     width: 40px;
     height: 40px;
+    margin-right: 0;
   }
 }
 
@@ -102,9 +107,15 @@
 }
 
 .top-actions {
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   display: flex;
+}
+
+@media (width >= 744px) {
+  .top-actions {
+    justify-content: right;
+  }
 }
 
 .header {
@@ -130,7 +141,7 @@
 .header__content {
   box-sizing: border-box;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: left;
   padding-top: 24px;
   display: flex;
 }
@@ -141,27 +152,19 @@
   }
 }
 
-.header__image {
-  justify-content: center;
-  height: 38px;
-  margin: 0;
-  padding-bottom: 0;
-  display: flex;
-}
-
-@media (width >= 744px) {
-  .header__image {
-    height: 56px;
-  }
-}
-
 .header__active {
-  justify-content: center;
   display: flex;
 }
 
 .header__call {
+  order: 2;
   text-decoration: none;
+}
+
+@media (width >= 744px) {
+  .header__call {
+    order: -1;
+  }
 }
 
 @media (width >= 1024px) {
@@ -192,7 +195,8 @@
 .header__title {
   letter-spacing: 2px;
   text-align: right;
-  color: #fff;
+  color: #000;
+  text-shadow: 1px 1px 2px red, 0 0 1em #00f, 0 0 .2em #00f;
   margin: 0;
   padding-top: 400px;
   padding-bottom: 88px;
@@ -204,7 +208,6 @@
 
 @media (width >= 744px) {
   .header__title {
-    color: #000;
     padding-top: 430px;
     padding-bottom: 130px;
     font-size: 64px;
